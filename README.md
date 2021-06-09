@@ -121,9 +121,9 @@ https://raw.githubusercontent.com/meylakhdaria/hse21_H3K36me3_ZDNA_human/main/da
 
 Приведу некоторые примеры пересечений.
 
-![1](http://genome.ucsc.edu/trash/hgt/hgt_genome_33ab3_acc30.png)
+![1](http://genome.ucsc.edu/trash/hgt/hgt_genome_f29d_139230.png)
 
-![2](http://genome.ucsc.edu/trash/hgt/hgt_genome_3169b_abdc0.png)
+![2](http://genome.ucsc.edu/trash/hgt/hgt_genome_f57a_139520.png)
 
 ### Ассоциация пересечений
 
