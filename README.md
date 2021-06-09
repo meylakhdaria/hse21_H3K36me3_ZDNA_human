@@ -83,18 +83,59 @@ https://raw.githubusercontent.com/meylakhdaria/hse21_H3K36me3_ZDNA_human/main/da
 *track visibility=dense name="ChIP_merge"  color=50,50,200   description="H3K36me3.merge.hg19.bed"
 https://raw.githubusercontent.com/meylakhdaria/hse21_H3K36me3_ZDNA_human/main/data/H3K36me3.merge.hg19.bed*
 
-## Анализ участков вторичной стр-ры ДНК
+## Анализ участков вторичной структуры ДНК
 
-Скачиваю файл со вторичной стр-рой ДНК ZDNA_DeepZ.
+Скачиваю файл со вторичной структурой ДНК ZDNA_DeepZ.
 
 *wget https://raw.githubusercontent.com/Nazar1997/DeepZ/master/annotation/DeepZ.bed*
 
-Строю распределение длин участков вторичной стр-ры ДНК с помощью [скрипта](https://github.com/meylakhdaria/hse21_H3K36me3_ZDNA_human/blob/main/src/len_hist.R).
+Строю распределение длин участков вторичной структуры ДНК с помощью [скрипта](https://github.com/meylakhdaria/hse21_H3K36me3_ZDNA_human/blob/main/src/len_hist.R).
 
 [ZDNA_DeepZ](https://github.com/meylakhdaria/hse21_H3K36me3_ZDNA_human/blob/main/results/len_hist.DeepZ.pdf) - 19394 пиков.
 
-Смотрю, где располагаются участки стр-ры ДНК относительно аннотированных генов с помощью [скрипта](https://github.com/meylakhdaria/hse21_H3K36me3_ZDNA_human/blob/main/src/pie.R).
+Смотрю, где располагаются участки структуры ДНК относительно аннотированных генов с помощью [скрипта](https://github.com/meylakhdaria/hse21_H3K36me3_ZDNA_human/blob/main/src/pie.R).
 
 ![zdna](https://github.com/meylakhdaria/hse21_H3K36me3_ZDNA_human/blob/main/results/chip_seeker.DeepZ.plotAnnoPie.png)
 
-## Анализ пересечений гистоновой метки и стр-ры ДНК
+## Анализ пересечений гистоновой метки и структуры ДНК
+
+### Пересечения
+
+Нахожу пересечения гистоновой меткой и структурой ДНК ZDNA_DeepZ
+
+bedtools intersect  -a DeepZ.bed   -b  H3K36me3.merge.hg19.bed  >  H3K36me3.intersect_with_DeepZ.bed
+
+Строю с помощью [скрипта](https://github.com/meylakhdaria/hse21_H3K36me3_ZDNA_human/blob/main/src/len_hist.R).
+
+[H3K36me3 merged](https://github.com/meylakhdaria/hse21_H3K36me3_ZDNA_human/blob/main/results/len_hist.H3K36me3.merge.hg19.pdf) - 37661 пиков.
+
+Визуализирую все в геномном браузере. Для этого добавляю для отображения следующие команды.
+
+*track visibility=dense name="DeepZ"  color=0,200,0  description="DeepZ"
+https://raw.githubusercontent.com/meylakhdaria/hse21_H3K36me3_ZDNA_human/main/data/DeepZ.bed*
+
+*track visibility=dense name="intersect_with_DeepZ"  color=200,0,0  description="H3K6me36.intersect_with_DeepZ.bed"
+https://raw.githubusercontent.com/meylakhdaria/hse21_H3K36me3_ZDNA_human/main/data/H3K6me36.intersect_with_DeepZ.bed*
+
+Теперь мы можем отследить пересечения структуры и гистоновой метки, и так же их расположение относительно аннтированных генов. Вся сессия сохранена [здесь](http://genome.ucsc.edu/cgi-bin/hgTracks?db=hg19&lastVirtModeType=default&lastVirtModeExtraState=&virtModeType=default&virtMode=0&nonVirtPosition=&position=chr1%3A23884564-23885763&hgsid=1124025283_XqXHaWSQBPUXiB2XY8RMb9Lf2bi9).
+
+Приведу некоторые примеры пересечений.
+
+![1](http://genome.ucsc.edu/trash/hgt/hgt_genome_33ab3_acc30.png)
+
+![2](http://genome.ucsc.edu/trash/hgt/hgt_genome_3169b_abdc0.png)
+
+### Ассоциация пересечений
+
+Ассоциирую полученные пересечения с ближайшими генами с помощью  [скрипта](https://github.com/meylakhdaria/hse21_H3K36me3_ZDNA_human/blob/main/src/anno.R).
+
+Получаю [файл ассоциаций пиков с генами](https://github.com/meylakhdaria/hse21_H3K36me3_ZDNA_human/blob/main/results/H3K6me36.intersect_with_DeepZ.genes.txt), а также [список уникальных генов](https://github.com/meylakhdaria/hse21_H3K36me3_ZDNA_human/blob/main/results/H3K6me36.intersect_with_DeepZ.genes_uniq.txt). 
+
+Всего было проассоциирован **41** пик с генами при общем количества уникальных генов равном **32**.
+
+### GO-анализ
+
+Провожу GO-анализ на http://pantherdb.org/
+Полный список результатов представлен [здесь]().
+
+
