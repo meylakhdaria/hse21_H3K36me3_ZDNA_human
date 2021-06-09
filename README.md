@@ -105,9 +105,9 @@ https://raw.githubusercontent.com/meylakhdaria/hse21_H3K36me3_ZDNA_human/main/da
 
 bedtools intersect  -a DeepZ.bed   -b  H3K36me3.merge.hg19.bed  >  H3K36me3.intersect_with_DeepZ.bed
 
-Строю с помощью [скрипта](https://github.com/meylakhdaria/hse21_H3K36me3_ZDNA_human/blob/main/src/len_hist.R).
+Строю распределение длин с помощью [скрипта](https://github.com/meylakhdaria/hse21_H3K36me3_ZDNA_human/blob/main/src/len_hist.R).
 
-[H3K36me3 merged](https://github.com/meylakhdaria/hse21_H3K36me3_ZDNA_human/blob/main/results/len_hist.H3K36me3.merge.hg19.pdf) - 37661 пиков.
+[H3K36me3 intersect](https://github.com/meylakhdaria/hse21_H3K36me3_ZDNA_human/blob/main/results/len_hist.H3K6me36.intersect_with_DeepZ.pdf) - 147 пиков.
 
 Визуализирую все в геномном браузере. Для этого добавляю для отображения следующие команды.
 
