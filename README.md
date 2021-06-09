@@ -129,13 +129,16 @@ https://raw.githubusercontent.com/meylakhdaria/hse21_H3K36me3_ZDNA_human/main/da
 
 Ассоциирую полученные пересечения с ближайшими генами с помощью  [скрипта](https://github.com/meylakhdaria/hse21_H3K36me3_ZDNA_human/blob/main/src/anno.R).
 
-Получаю [файл ассоциаций пиков с генами](https://github.com/meylakhdaria/hse21_H3K36me3_ZDNA_human/blob/main/results/H3K6me36.intersect_with_DeepZ.genes.txt), а также [список уникальных генов](https://github.com/meylakhdaria/hse21_H3K36me3_ZDNA_human/blob/main/results/H3K6me36.intersect_with_DeepZ.genes_uniq.txt). 
+Получаю [файл ассоциаций пиков с генами](https://raw.githubusercontent.com/meylakhdaria/hse21_H3K36me3_ZDNA_human/main/data/H3K6me36.intersect_with_DeepZ.genes.txt), а также [список уникальных генов](https://raw.githubusercontent.com/meylakhdaria/hse21_H3K36me3_ZDNA_human/main/data/H3K6me36.intersect_with_DeepZ.genes_uniq.txt). 
 
 Всего было проассоциирован **41** пик с генами при общем количества уникальных генов равном **32**.
 
 ### GO-анализ
 
 Провожу GO-анализ на http://pantherdb.org/
-Полный список результатов представлен [здесь]().
+Полный список результатов представлен [здесь](https://raw.githubusercontent.com/meylakhdaria/hse21_H3K36me3_ZDNA_human/main/data/pantherdb_GO_analysis.txt).
 
-
+Наиболее значимыми оказались категории  следующими значениями FDR:
+*cotranslational protein targeting to membrane	FDR=7.69E-08
+establishment of protein localization to endoplasmic reticulum	FDR=7.77E-08
+cytoplasmic translation	FDR=7.78E-08*
