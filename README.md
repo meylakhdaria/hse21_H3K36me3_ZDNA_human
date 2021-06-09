@@ -139,6 +139,9 @@ https://raw.githubusercontent.com/meylakhdaria/hse21_H3K36me3_ZDNA_human/main/da
 Полный список результатов представлен [здесь](https://raw.githubusercontent.com/meylakhdaria/hse21_H3K36me3_ZDNA_human/main/data/pantherdb_GO_analysis.txt).
 
 Наиболее значимыми оказались категории  следующими значениями FDR:
-*cotranslational protein targeting to membrane	FDR=7.69E-08
-establishment of protein localization to endoplasmic reticulum	FDR=7.77E-08
-cytoplasmic translation	FDR=7.78E-08*
+
+*cotranslational protein targeting to membrane	FDR=7.69E-08*
+
+*establishment of protein localization to endoplasmic reticulum	FDR=7.77E-08*
+
+*cytoplasmic translation	FDR=7.78E-08*
